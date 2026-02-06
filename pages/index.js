@@ -59,6 +59,19 @@ export default function Home() {
     },
   ];
 
+  const navItems = [
+    { label: "Front Page", href: "/" },
+    { label: "Dopest", href: "#" },
+    { label: "Music", href: "#" },
+    { label: "Culture", href: "#" },
+    { label: "Podcast", href: "#" },
+    { label: "Sessions", href: "#" },
+    { label: "Drops", href: "#" },
+    { label: "Radio", href: "#" },
+    { label: "Studio", href: "/studio" }, // ✅ moved here (inside JSX)
+    { label: "Submit", href: "#" },
+  ];
+
   return (
     <main className="min-h-screen bg-[#f7f2e7] text-[#111]">
       {/* Page frame */}
@@ -88,20 +101,20 @@ export default function Home() {
 
           <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
             <div className="uppercase tracking-widest">Arts • Culture • Music • Media</div>
-            <div className="uppercase tracking-widest">Issue 006 • “The Dopest Edition”</div>
+            <div className="uppercase tracking-widest">
+              Issue 006 • “The Dopest Edition”
+            </div>
           </div>
         </header>
 
         {/* Top nav like a newspaper section bar */}
         <nav className="border-b border-[#111] py-2 text-xs uppercase tracking-widest">
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {["Front Page", "Dopest", "Music", "Culture", "Podcast", "Sessions", "Drops", "Radio", "Submit"].map(
-              (x) => (
-                <a key={x} href="#" className="hover:underline">
-                  {x}
-                </a>
-              )
-            )}
+            {navItems.map((x) => (
+              <a key={x.label} href={x.href} className="hover:underline">
+                {x.label}
+              </a>
+            ))}
           </div>
         </nav>
 
@@ -116,7 +129,9 @@ export default function Home() {
               <ul className="divide-y divide-[#111]">
                 {briefs.map((b) => (
                   <li key={b.k} className="px-3 py-3">
-                    <div className="text-[11px] font-bold uppercase tracking-widest">{b.k}</div>
+                    <div className="text-[11px] font-bold uppercase tracking-widest">
+                      {b.k}
+                    </div>
                     <div
                       className="mt-1 text-sm leading-snug"
                       style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}
@@ -129,11 +144,14 @@ export default function Home() {
             </div>
 
             <div className="mt-4 border-t border-[#111] pt-4">
-              <div className="text-xs font-bold uppercase tracking-widest">Ticker</div>
+              <div className="text-xs font-bold uppercase tracking-widest">
+                Ticker
+              </div>
               <div className="mt-2 border border-[#111] bg-[#fffaf0] p-3 text-sm leading-snug">
                 <div className="font-semibold">Now:</div>
                 <div style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
-                  “Dopest of the Week” session posted • New podcast clip • Drop live
+                  “Dopest of the Week” session posted • New podcast clip • Drop
+                  live
                 </div>
               </div>
             </div>
@@ -148,21 +166,28 @@ export default function Home() {
 
               <h2
                 className="mt-2 text-3xl sm:text-4xl font-extrabold leading-tight"
-                style={{ fontFamily: "ui-serif, Georgia, 'Times New Roman', Times, serif" }}
+                style={{
+                  fontFamily:
+                    "ui-serif, Georgia, 'Times New Roman', Times, serif",
+                }}
               >
-                DJ Raven’s “Northern Lights” Live Session Makes the Case for What’s Next
+                DJ Raven’s “Northern Lights” Live Session Makes the Case for
+                What’s Next
               </h2>
 
               <p
                 className="mt-2 text-base leading-relaxed"
                 style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}
               >
-                A curated platform for Indigenous excellence — not a leaderboard, not an algorithm. DNA spotlights the
-                voices moving culture right now, across all genres.
+                A curated platform for Indigenous excellence — not a leaderboard,
+                not an algorithm. DNA spotlights the voices moving culture right
+                now, across all genres.
               </p>
 
               <div className="mt-4 aspect-video border border-[#111] bg-[#111]/5 grid place-items-center">
-                <div className="text-xs uppercase tracking-widest">Featured video embed</div>
+                <div className="text-xs uppercase tracking-widest">
+                  Featured video embed
+                </div>
               </div>
 
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -179,14 +204,26 @@ export default function Home() {
             <div className="mt-5 grid gap-6 sm:grid-cols-2">
               {sections.map((s) => (
                 <div key={s.section} className="border-t border-[#111] pt-3">
-                  <div className="text-xs font-bold uppercase tracking-widest">{s.section}</div>
+                  <div className="text-xs font-bold uppercase tracking-widest">
+                    {s.section}
+                  </div>
                   <ul className="mt-2 space-y-3">
                     {s.items.map((it) => (
                       <li key={it.h}>
-                        <div className="font-bold leading-snug" style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
+                        <div
+                          className="font-bold leading-snug"
+                          style={{
+                            fontFamily: "ui-serif, Georgia, Times, serif",
+                          }}
+                        >
                           {it.h}
                         </div>
-                        <div className="text-sm leading-snug" style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
+                        <div
+                          className="text-sm leading-snug"
+                          style={{
+                            fontFamily: "ui-serif, Georgia, Times, serif",
+                          }}
+                        >
                           {it.d}
                         </div>
                       </li>
@@ -207,10 +244,17 @@ export default function Home() {
                 {latest.map((x) => (
                   <li key={x.title} className="px-3 py-3">
                     <div className="flex items-center justify-between gap-2">
-                      <div className="text-[11px] font-bold uppercase tracking-widest">{x.tag}</div>
-                      <div className="text-[11px] uppercase tracking-widest">{x.meta}</div>
+                      <div className="text-[11px] font-bold uppercase tracking-widest">
+                        {x.tag}
+                      </div>
+                      <div className="text-[11px] uppercase tracking-widest">
+                        {x.meta}
+                      </div>
                     </div>
-                    <div className="mt-1 text-sm leading-snug" style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
+                    <div
+                      className="mt-1 text-sm leading-snug"
+                      style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}
+                    >
                       {x.title}
                     </div>
                   </li>
@@ -223,10 +267,15 @@ export default function Home() {
                 Drops
               </div>
               <div className="p-3">
-                <div className="text-sm font-bold" style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
+                <div
+                  className="text-sm font-bold"
+                  style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}
+                >
                   Episode #42 Collab Tee
                 </div>
-                <div className="text-xs uppercase tracking-widest mt-1">Limited • DTF • Ships in 3–7 days</div>
+                <div className="text-xs uppercase tracking-widest mt-1">
+                  Limited • DTF • Ships in 3–7 days
+                </div>
                 <button className="mt-3 w-full border border-[#111] bg-[#111] text-[#f7f2e7] px-4 py-2 text-sm font-semibold hover:opacity-90">
                   Shop the Drop
                 </button>
@@ -234,10 +283,17 @@ export default function Home() {
             </div>
 
             <div className="mt-4 border-t border-[#111] pt-4">
-              <div className="text-xs font-bold uppercase tracking-widest">DNA Radio</div>
+              <div className="text-xs font-bold uppercase tracking-widest">
+                DNA Radio
+              </div>
               <div className="mt-2 border border-[#111] bg-[#fffaf0] p-3 text-sm">
-                <div className="text-[11px] uppercase tracking-widest">Now Playing</div>
-                <div className="mt-1 font-semibold" style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}>
+                <div className="text-[11px] uppercase tracking-widest">
+                  Now Playing
+                </div>
+                <div
+                  className="mt-1 font-semibold"
+                  style={{ fontFamily: "ui-serif, Georgia, Times, serif" }}
+                >
                   “Dopest Right Now” — live rotation
                 </div>
                 <div className="mt-3 flex gap-2">
@@ -262,4 +318,3 @@ export default function Home() {
     </main>
   );
 }
-<a href="/studio">Studio</a>
