@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional baseline tweaks */
 html,
 body {
   padding: 0;
   margin: 0;
+  background: #f7f2e7;
+  color: #111;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* IMPORTANT: do NOT constrain main */
+main {
+  width: 100%;
 }
